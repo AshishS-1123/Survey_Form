@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Survey Form</title>
+        <meta http-equiv="CONTENT-TYPE" content="text/html" charset="UTF-8">
+        <link rel = "stylesheet" type = "text/css" href = "styles/style.css"
+        
+    </head>
+<body>
+<header id = "header">
+    <h1 id = "title">Survey Form</h1>
+</header>
+
+<content id = "content">
+    <div id = "description-section">
+        <p id = "description">Please Answer The Following Questions And Help Us Understand The Current Status of Programmers and
+            Their Favourite Programming Languages.
+        </p>
+    </div>
+
+    <div id = "status">
+        <div id = "progress"></div>
+    </div>
+    
+    <div id = "container">
+    <form id = "survey-form">
+          
+            <div class = "section" id = "1"><fieldset id = "field-1" class = "field">
+                <legend id = "legend-1" class = "legend">Basic Personal Info</legend>
+
+                <label id = "name-label">Enter Your Name :<br></label>
+                <input type = "text" id = "name" class = "input" placeholder="Name" required><br><br>
+            
+                <label id = "email-label">Enter Your Email ID :<br></label>
+                <input type = "email" id = "email" class = "input" placeholder = "E-Mail ID" required><br><br>
+            
+                <label id = "number-label">Enter Your Phone Number :<br></label>
+                <input type = "number" id = "number" class = "input" placeholder = "Phone Number" min = "999999999" max="9999999999" required><br><br>
+            
+                </fieldset></div>
+        
+            <div class = "section" id = "2"><fieldset id = "field-2" class = "field">
+                <legend id = "legend-2" class = "legend">Educational Background</legend>
+                
+                <label>Are you a Student or Professional<br></label>
+                <select id = "dropdown" onchange = "show_div()">
+                    <option value = "1">Select Your Profession</option>
+                    <option value = "student">I Am A Student</option>
+                    <option value = "professional">I Am A Professional</option>
+                </select>
+            <div id = "hidden-menu">
+                <!-- STUDENT INFORRMATION DATA -->
+                <div id = "student">
+                    
+                    <br><label>What college do you study in?<br></label>
+                    <input type = "text" class = "input" id = "collage-name"><br>
+                
+                    <br><label>Enter your marks in the previous semister<br></label>
+                    <input type = "number" class = "input" id = "marks"><br>
+                 
+                    <br><label>What is the highest level of your education<br></label>
+                    <select id = "education-menu">
+                        <option value = "1">Select your level of education</option>
+                        <option value = "2">School</option>
+                        <option value = "3">Collage</option>
+                        <option value = "4">Undergraduate</option>
+                        <option value = "5">Graduate</option>
+                        <option value = "6">Post-Graduate</option>
+                        <option value = "7">Doctrate</option>
+                    
+                    </select>
+                </div>
+                <!-- PROFESSIONAL INFORMATION DATA -->
+                <div id = "professional">
+                    <label>Which company do you work for?<br></label>
+                    <input type = "text" class = "input" id = "company"><br>
+                   
+                    <label>How long have you been working as a programmer?<br></label>
+                    <input type = "number" class = "input" id = "experience"><br>
+                 
+                    <label>What is the highest level of your education<br></label>
+                    <select id = "education-menu">
+                        <option value = "1">Select your level of education</option>
+                        <option value = "2">School</option>
+                        <option value = "3">College</option>
+                        <option value = "4">Undergraduate</option>
+                        <option value = "5">Graduate</option>
+                        <option value = "6">Post-Graduate</option>
+                        <option value = "7">Doctrate</option>
+                    
+                    </select>
+                </div>
+            </div>
+                </fieldset></div>
+        
+            <div class = "section" id = "3"><fieldset id = "field-3" class = "field">
+                <legend id = "legend-3" class = "legend">Programming Skills</legend>
+                <label>Choose the programming languages you are famliar with<br></label>
+                
+                <label><input type = "checkbox" value = "c"><span class = "check"></span>C</label><br>
+                <label><input type = "checkbox" value = "cpp">C++</label><br>
+                <label><input type = "checkbox" value = "java">Java</label><br>
+                <label><input type = "checkbox" value = "python">Python</label><br>
+                <label><input type = "checkbox" value = "js">Javascript</label><br>
+                <label><input type = "checkbox" value = "other">Other</label><br>
+            
+                
+                <label><br>Choose the language you are most comfortable with<br></label>
+                
+                <label><input id = "c-radio" type = "radio" name = "prim-lang" value = "c-p">C</label><br>
+                <label><input id = "cpp-radio" type = "radio" name = "prim-lang" value = "cpp-p">C++</label><br>
+                <label><input id = "java-radio" type = "radio" name = "prim-lang" value = "java-p">Java</label><br>
+                <label><input id = "python-radio" type = "radio" name = "prim-lang" value = "python-p">Python</label><br>
+                <label><input id = "js-radio" type = "radio" name = "prim-lang" value = "js-p">Javascript</label><br>
+                <label><input id = "other-radio" type = "radio" name = "prim-lang" value = "other-p">Other</label><br>
+                
+                </fieldset></div>
+        
+            <div class = "section" id = "4"><fieldset id = "field-4" class = "field">
+                <legend id = "legend-4" class = "legend">Coding Skills</legend>
+            
+                <label id = "write-program">
+                    Write a program in your favourite language.<br><br>
+                    <p><u>Question</u> : Given a sequence of 'N' integers, find the number of combinations whose sum is at most 'A'.<br></p>
+                    <p><u>Input</u> : First line is T, denoting the the number of test cases. Second line is N denoting number of elements in sequence.<br>
+                    The next line consists of N numbers. This is followed by integer A.<br></p>
+                    <p><u>Output</u> : For each test case, print a single number, the number of combinations possible.<br></p>
+                    <br>
+                </label>
+                <textarea role = "textbox" id = "source-code"></textarea><br>
+        
+                </fieldset></div>
+      
+           <div id = "buttons">
+                <button id = "prev" onclick = "prev_section();" type = "button"><< Previous </button>
+                <button id = "next" onclick = "next_section();" type = "button"> Next >></button>
+           </div>
+           <button id = "submit" type = "submit">Submit</button>
+
+        </form>
+        </div>
+    
+</content>
+
+<footer id = "footer">
+    
+</footer>
+    
+    <scrifpt src = "scripts/bundle.js"></script>
+    <script src = "scripts/jquery-3.5.1.min.js"></script>
+    <script src = "scripts/main.js"></script>
+</body>
+</html>
