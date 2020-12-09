@@ -62,6 +62,7 @@ html {
     height: 100%;
     border-radius: 15px;
     background-color: #E85A4F;
+    transition-duration: 0.8s;
 }
 
 #progress-text {
@@ -105,7 +106,7 @@ label {
 
 .text-input:focus {
     outline-style: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid black !important;
     width: 10.5vw;
 }
 
