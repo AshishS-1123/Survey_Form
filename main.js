@@ -8,7 +8,29 @@ var progress_width = parseInt( $("#progress-bar-main").css("width") );
 
 var progress_text = $("#progress-text");
 
+// set some html styles to be loaded when form opens first
+$("#field-2").slideUp(length = 10);
+$("#field-2").css("visibility", "hidden");
+
+$("#professional-section").slideUp(length = 100);
+
 // Functions
+
+function change_visible_div()
+{
+    dropdown_div  = $("#dropdown-profession");
+
+    if ( dropdown_div.val() == "professional" )
+    {
+        $("#student-section").slideUp(length = 400);
+        $("#professional-section").slideDown(length = 400);
+    }
+    else
+    {
+        $("#student-section").slideDown(length = 400);
+        $("#professional-section").slideUp(length = 400);
+    }
+}
 
 // Function: checkSectionOne
 // Description: Checks if all the inputs in first section have been filled
@@ -164,6 +186,27 @@ function checkFormOk( section_index )
 // Return Value: None
 function previousSection()
 {
+    if ( section_index == 1 )
+        return;
+        
+    var current_section = "#field-" + String( section_index );
+    var prev_section = "#field-" + String( section_index - 1 );
+
+    --section_index;
+
+    $(current_section).css("visibility", "hidden");
+    $(prev_section).css("visibility", "hidden");
+
+    $(current_section).slideUp(length = 10);
+    $(prev_section).slideDown(length = 10);
+
+    $(prev_section).css("visibility", "visible");
+
+    var new_width = String(0.25 * progress_width * section_index) + "px";
+    progress_done.css("width", new_width);
+
+    var progress_percent = String( 25 * section_index ) + "%";
+    progress_text.text( progress_percent );
 
 }
 
@@ -201,6 +244,12 @@ function nextSection()
         ++section_index;
 
         $(current_section).css("visibility", "hidden");
+        $(next_section).css("visibility", "hidden");
+
+        $(next_section).slideDown(length = 0);
+        $(current_section).slideUp(length = 0);
+
+        $(next_section).css("visibility", "visible");
 
         var new_width = String(0.25 * progress_width * section_index) + "px";
         progress_done.css("width", new_width);
