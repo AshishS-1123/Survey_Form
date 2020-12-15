@@ -16,7 +16,7 @@
 
         <div id = "main" class = "container">
 
-            <h1 id = "title">Programming Survey</h1>
+            <h1 id = "title"><u>Programming Survey</u></h1>
             <p id = "description">
                 Please Answer The Following Questions And Help Us Understand The
                 Current Status of Programmers and Their Favourite Programming Languages.
@@ -47,7 +47,47 @@
                     <label id = "number-label">Phone No.<br></label>
                     <input type = "number" id = "number" class = "text-input" placeholder = "Enter Your Phone No" min = "999999999" max="9999999999" required><br><br>
 
-                 </fieldset>
+                </fieldset>
+
+                <fieldset id = "field-2" class = "field">
+
+                    <div class = "section-icon container" id = "education-icon"></div>
+
+                    <h4 class = "section-heading">
+                         Education
+                    </h4>
+
+                    <label id = "dropdown-profession-label">Select<br></label>
+                    <select id = "dropdown-profession" onchange = "change_visible_div();">
+                         <option value = "student">I am a Student</option>
+                         <option value = "professional">I am a Professional</option>
+                    </select><br>
+
+                    <div id = "student-section">
+
+                        <label id = "college-label">College<br></label>
+                        <input type = "text" id = "college" class = "text-input" placeholder = "What College Are You In" required><br><br>
+
+                        <label id = "dropdown-branch-label">Branch<br></label>
+                        <select id = "dropdown-branch">
+                            <option value = "cs">Computer Science</option>
+                            <option value = "ec">Electronics</option>
+                            <option value = "it">Information Technology</option>
+                            <option value = "other">Other</option>
+                        </select><br>
+
+                    </div>
+
+                    <div id = "professional-section">
+
+                        <label id = "company-label">Company<br></label>
+                        <input type = "text" id = "company" class = "text-input" required><br>
+
+                        <label id = "experience-label">Experience<br></label>
+                        <input type = "text" id = "experience" class = "text-input" required><br>
+
+                    </div>
+                </fieldset>
 
 
                 <div id = "buttons" class = "container">
