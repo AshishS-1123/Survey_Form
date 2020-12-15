@@ -69,29 +69,30 @@ function checkSectionOne()
 // Return Value: true is all inputs have been filled, else false
 function checkSectionTwo()
 {
-    var input_element = ["#name", "#email", "#number"];
-    var not_submitted = [];
+    var input_filled = true;
 
-    for ( var i = 0; i < input_element.length; ++i )
+    if ( $("#college").val() == "" && $("#dropdown-profession").val() == "student" )
     {
-        if ( $(input_element[i]).val() == "" )
-        {
-            $(input_element[i]).css("border-bottom-color", "#E85A4F");
-            $(input_element[i]).css("border-width", "3px");
-
-            not_submitted.push(input_element[i]);
-        }
-        else
-        {
-            $(input_element[i]).css("border-bottom-color", "black");
-            $(input_element[i]).css("border-width", "1px");
-        }
+        $("#college").css("border-bottom-color", "#E85A4F");
+        $("#college").css("border-width", "3px");
+        input_filled = false;
     }
 
-    if ( not_submitted.length == 0 )
-        return true;
-    return false;
+    if ( $("#company").val() == "" && $("#dropdown-profession").val() == "professional" )
+    {
+        $("#company").css("border-bottom-color", "#E85A4F");
+        $("#company").css("border-width", "3px");
+        input_filled = false;
+    }
 
+    if ( $("#experience").val() == "" && $("#dropdown-profession").val() == "professional" )
+    {
+        $("#experience").css("border-bottom-color", "#E85A4F");
+        $("#experience").css("border-width", "3px");
+        input_filled = false;
+    }
+
+    return input_filled;
 }
 
 // Function: checkSectionThree
@@ -188,7 +189,7 @@ function previousSection()
 {
     if ( section_index == 1 )
         return;
-        
+
     var current_section = "#field-" + String( section_index );
     var prev_section = "#field-" + String( section_index - 1 );
 
