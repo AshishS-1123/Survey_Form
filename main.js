@@ -18,7 +18,7 @@ $("#professional-section").slideUp(length = 100);
 
 function change_visible_div()
 {
-    dropdown_div  = $("#dropdown-profession");
+    dropdown_div  = $("#dropdown");
 
     if ( dropdown_div.val() == "professional" )
     {
@@ -71,21 +71,21 @@ function checkSectionTwo()
 {
     var input_filled = true;
 
-    if ( $("#college").val() == "" && $("#dropdown-profession").val() == "student" )
+    if ( $("#college").val() == "" && $("#dropdown").val() == "student" )
     {
         $("#college").css("border-bottom-color", "#E85A4F");
         $("#college").css("border-width", "3px");
         input_filled = false;
     }
 
-    if ( $("#company").val() == "" && $("#dropdown-profession").val() == "professional" )
+    if ( $("#company").val() == "" && $("#dropdown").val() == "professional" )
     {
         $("#company").css("border-bottom-color", "#E85A4F");
         $("#company").css("border-width", "3px");
         input_filled = false;
     }
 
-    if ( $("#experience").val() == "" && $("#dropdown-profession").val() == "professional" )
+    if ( $("#experience").val() == "" && $("#dropdown").val() == "professional" )
     {
         $("#experience").css("border-bottom-color", "#E85A4F");
         $("#experience").css("border-width", "3px");
