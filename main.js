@@ -60,7 +60,12 @@ function checkSectionOne()
 
     for ( var i = 0; i < input_element.length; ++i )
         if ( $(input_element[i]).val() == "" )
+        {
+            $(input_element[i]).css("border-bottom-color", "#E85A4F");
+            $(input_element[i]).css("border-width", "3px");
+
             not_submitted.push(input_element[i]);
+        }
 
     if ( not_submitted.length == 0 )
         return true;
@@ -77,13 +82,28 @@ function checkSectionTwo()
     var input_filled = true;
 
     if ( $("#college").val() == "" && $("#dropdown").val() == "student" )
+    {
+        $("#college").css("border-bottom-color", "#E85A4F");
+        $("#college").css("border-width", "3px");
+
         input_filled = false;
+    }
 
     if ( $("#company").val() == "" && $("#dropdown").val() == "professional" )
+    {
+        $("#company").css("border-bottom-color", "#E85A4F");
+        $("#company").css("border-width", "3px");
+
         input_filled = false;
+    }
 
     if ( $("#experience").val() == "" && $("#dropdown").val() == "professional" )
+    {
+        $("#experience").css("border-bottom-color", "#E85A4F");
+        $("#experience").css("border-width", "3px");
+
         input_filled = false;
+    }
 
     return input_filled;
 }
