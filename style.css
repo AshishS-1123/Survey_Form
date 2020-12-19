@@ -148,6 +148,10 @@ label {
     background-image: url("resources/Section_Icons/qualification.svg");
 }
 
+#qualification-icon {
+    background-image: url("resources/Section_Icons/skills.svg");
+}
+
 #college, #company, #experience {
     margin-top: 1%;
 }

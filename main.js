@@ -9,11 +9,28 @@ var progress_width = parseInt( $("#progress-bar-main").css("width") );
 var progress_text = $("#progress-text");
 
 // set some html styles to be loaded when form opens first
-$("#field-2").slideUp(length = 10);
 $("#field-2").css("visibility", "hidden");
+$("#field-2").slideUp(length = 0);
+
+$("#field-3").css("visibility", "hidden");
+$("#field-3").slideUp(length = 0);
+
 
 $("#professional-section").slideUp(length = 100);
 
+$(".text-input").blur( function()
+{
+    if( $(this).val() == "" )
+    {
+        $(this).css("border-bottom-color", "#E85A4F");
+        $(this).css("border-width", "3px");
+    }
+    else
+    {
+        $(this).css("border-bottom-color", "#000000");
+        $(this).css("border-width", "1px");
+    }
+});
 // Functions
 
 function change_visible_div()
@@ -42,20 +59,8 @@ function checkSectionOne()
     var not_submitted = [];
 
     for ( var i = 0; i < input_element.length; ++i )
-    {
         if ( $(input_element[i]).val() == "" )
-        {
-            $(input_element[i]).css("border-bottom-color", "#E85A4F");
-            $(input_element[i]).css("border-width", "3px");
-
             not_submitted.push(input_element[i]);
-        }
-        else
-        {
-            $(input_element[i]).css("border-bottom-color", "black");
-            $(input_element[i]).css("border-width", "1px");
-        }
-    }
 
     if ( not_submitted.length == 0 )
         return true;
@@ -72,25 +77,13 @@ function checkSectionTwo()
     var input_filled = true;
 
     if ( $("#college").val() == "" && $("#dropdown").val() == "student" )
-    {
-        $("#college").css("border-bottom-color", "#E85A4F");
-        $("#college").css("border-width", "3px");
         input_filled = false;
-    }
 
     if ( $("#company").val() == "" && $("#dropdown").val() == "professional" )
-    {
-        $("#company").css("border-bottom-color", "#E85A4F");
-        $("#company").css("border-width", "3px");
         input_filled = false;
-    }
 
     if ( $("#experience").val() == "" && $("#dropdown").val() == "professional" )
-    {
-        $("#experience").css("border-bottom-color", "#E85A4F");
-        $("#experience").css("border-width", "3px");
         input_filled = false;
-    }
 
     return input_filled;
 }
@@ -107,17 +100,10 @@ function checkSectionThree()
     for ( var i = 0; i < input_element.length; ++i )
     {
         if ( $(input_element[i]).val() == "" )
-        {
-            $(input_element[i]).css("border-bottom-color", "#E85A4F");
-            $(input_element[i]).css("border-width", "3px");
-
             not_submitted.push(input_element[i]);
-        }
         else
-        {
             $(input_element[i]).css("border-bottom-color", "black");
             $(input_element[i]).css("border-width", "1px");
-        }
     }
 
     if ( not_submitted.length == 0 )
