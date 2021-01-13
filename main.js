@@ -15,6 +15,8 @@ $("#field-2").slideUp(length = 0);
 $("#field-3").css("visibility", "hidden");
 $("#field-3").slideUp(length = 0);
 
+$("#field-4").css("visibility", "hidden");
+$("#field-4").slideUp(length = 0);
 
 $("#professional-section").slideUp(length = 100);
 
@@ -114,22 +116,11 @@ function checkSectionTwo()
 // Return Value: true is all inputs have been filled, else false
 function checkSectionThree()
 {
-    var input_element = ["#name", "#email", "#number"];
-    var not_submitted = [];
-
-    for ( var i = 0; i < input_element.length; ++i )
-    {
-        if ( $(input_element[i]).val() == "" )
-            not_submitted.push(input_element[i]);
-        else
-            $(input_element[i]).css("border-bottom-color", "black");
-            $(input_element[i]).css("border-width", "1px");
-    }
-
-    if ( not_submitted.length == 0 )
-        return true;
-    return false;
-
+    if( $("input[ type = checkbox ]:checked").length == 0 )
+        return false;
+    else if ( $("input[ type = radio ]:checked").length == 0 )
+        return false;
+    return true;
 }
 
 // Function: checkSectionFour
@@ -244,7 +235,7 @@ function nextSection()
     var current_section = "#field-" + String( section_index );
     var next_section = "#field-" + String( section_index + 1 );
 
-    section_ok = true;//checkFormOk( section_index );
+    section_ok = checkFormOk( section_index );
 
     if ( section_ok )
     {
