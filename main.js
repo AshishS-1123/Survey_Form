@@ -129,29 +129,9 @@ function checkSectionThree()
 // Return Value: true is all inputs have been filled, else false
 function checkSectionFour()
 {
-    var input_element = ["#name", "#email", "#number"];
-    var not_submitted = [];
-
-    for ( var i = 0; i < input_element.length; ++i )
-    {
-        if ( $(input_element[i]).val() == "" )
-        {
-            $(input_element[i]).css("border-bottom-color", "#E85A4F");
-            $(input_element[i]).css("border-width", "3px");
-
-            not_submitted.push(input_element[i]);
-        }
-        else
-        {
-            $(input_element[i]).css("border-bottom-color", "black");
-            $(input_element[i]).css("border-width", "1px");
-        }
-    }
-
-    if ( not_submitted.length == 0 )
-        return true;
-    return false;
-
+    if( $("textarea").val() == "" )
+        return false;
+    return true;
 }
 
 // Function: checkFormOk
@@ -160,6 +140,12 @@ function checkSectionFour()
 // Return Value: true is all inputs have been filled, else false
 function checkFormOk( section_index )
 {
+    console.log("For this iteration");
+    console.log(checkSectionOne());
+    console.log(checkSectionTwo());
+    console.log(checkSectionThree());
+    console.log(checkSectionFour());
+
     switch ( section_index )
     {
         // for section 1
@@ -214,7 +200,7 @@ function previousSection()
 // Return Value: true is all inputs have been filled
 function submitForm()
 {
-    if ( checkFormOk() )
+    if ( checkFormOk(-1) )
     {
         console.log("Everything OK!");
     }
@@ -237,7 +223,7 @@ function nextSection()
 
     section_ok = checkFormOk( section_index );
 
-    if ( section_ok )
+    if ( section_ok && section_index < 4 )
     {
         ++section_index;
 
