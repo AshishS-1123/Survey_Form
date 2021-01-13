@@ -244,7 +244,7 @@ function nextSection()
     var current_section = "#field-" + String( section_index );
     var next_section = "#field-" + String( section_index + 1 );
 
-    section_ok = checkFormOk( section_index );
+    section_ok = true;//checkFormOk( section_index );
 
     if ( section_ok )
     {
