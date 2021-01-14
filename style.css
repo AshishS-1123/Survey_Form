@@ -25,13 +25,15 @@ html {
 }
 
 #main {
-    width: 35vw;
+    width: 35em;
     height: 90vh;
     margin-top: 3vw;
     background-color: white;
     border-radius: 10px;
     box-shadow: 7px 10px 10px -8px #000;
 }
+
+/* HEADER OF PAGE */
 
 #title {
     text-align: center;
@@ -49,8 +51,10 @@ html {
     margin-top: 20px;
 }
 
+/* PROGRESS BAR */
+
 #progress-bar-main {
-    width: 27.86vw;
+    width: 27.86em;
     height: 25px;
     border-radius: 15px;
     margin-top: 40px;
@@ -73,6 +77,8 @@ html {
     color: white;
 }
 
+/* MAIN FORM BODY */
+
 #survey-form {
     height: 60vh;
     margin-top: 5%;
@@ -85,7 +91,7 @@ html {
 }
 
 .section-icon {
-    width: 4vw;
+    width: 4em;
     height: 10vh;
     background-repeat: no-repeat;
     background-size: 60px 70px;
@@ -93,11 +99,11 @@ html {
 }
 
 label {
-    margin-left: 5vw;
+    margin-left: 5em;
 }
 
 .text-input {
-    width: 10vw;
+    width: 10em;
     border-style: none;
     border-bottom: 1px solid black;
     position: absolute;
@@ -109,8 +115,10 @@ label {
 .text-input:focus {
     outline-style: none;
     border-bottom: 2px solid black !important;
-    width: 10.5vw;
+    width: 11em;
 }
+
+/* PLACEHOLDER FOR TEXT INPUT */
 
 .text-input::-webkit-input-placeholder {
     font-size: 0.9em;
@@ -140,6 +148,8 @@ label {
     text-align: center;
 }
 
+/* SECTION ICONS */
+
 #personal-info-icon {
     background-image: url("resources/Section_Icons/personal_info.svg");
 }
@@ -159,12 +169,14 @@ label {
 
 
 #college, #company, #experience {
-    margin-top: 1%;
+    margin-top: 1em;
 }
 
 #college-label, #company-label, #experience-label {
-    margin-top: 5%;
+    margin-top: 1em;
 }
+
+/* SECTION 2 */
 
 #field-2 {
     margin-bottom: 8.7%;
@@ -175,7 +187,7 @@ label {
 }
 
 select {
-    width: 10vw;
+    width: 10em;
     border-style: none;
     border-bottom: 1px solid black;
     position: absolute;
@@ -187,8 +199,10 @@ select {
 select:focus {
     outline-style: none;
     border-bottom: 2px solid black !important;
-    width: 10.5vw;
+    width: 11em;
 }
+
+/* SECTION 3 */
 
 .box-input-container{
     height: 7%;
@@ -210,6 +224,8 @@ select:focus {
     margin-bottom: 6.5%;
 }
 
+/* SECTION 4 */
+
 #field-4 {
     margin-bottom: 28%;
 }
@@ -219,13 +235,15 @@ select:focus {
 }
 
 textarea {
-    width: 20%;
+    width: 20em;
     height: 15%;
     position: absolute;
     padding-left: 5px;
     left: 50%;
     transform: translate(-50%);
 }
+
+/* PREVIOUS NEXT AND SUBMIT BUTTONS */
 
 #buttons {
     width: 100%;
@@ -239,7 +257,7 @@ textarea {
 }
 
 .button-img {
-    width: 4.5vw;
+    width: 4.5em;
     left: -50%;
     transform: translateX(50%);
 
@@ -379,4 +397,25 @@ label:hover:before {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
+}
+
+
+/* MEDIA QUERIES */
+
+/* Smartphones (portrait and landscape)*/
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+
+}
+
+/* iPads (portrait and landscape)*/
+
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+}
+
+/* Desktop and Laptop */
+
+@media only screen and (min-width : 1224px){
+
 }

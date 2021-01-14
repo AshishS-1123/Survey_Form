@@ -140,12 +140,6 @@ function checkSectionFour()
 // Return Value: true is all inputs have been filled, else false
 function checkFormOk( section_index )
 {
-    console.log("For this iteration");
-    console.log(checkSectionOne());
-    console.log(checkSectionTwo());
-    console.log(checkSectionThree());
-    console.log(checkSectionFour());
-
     switch ( section_index )
     {
         // for section 1
