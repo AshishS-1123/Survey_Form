@@ -7,57 +7,70 @@
 	src: url("resources/fonts/Acme.ttf?4.7.0")format("truetype");
 }
 
-/* DEFINE STYLES FOR ALL ELEMENTS IN PAGE*/
+/* DOCUMENT LEVEL STYLES */
+
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-    width: 100%;
-    height: 100%;
-    font-size: calc(0.7 + 1vw);
+    font-size: calc( 0.75em + 1vh );
 }
 
-#page {
-    background-image: url("resources/Images/Background.png");
-    background-size: 100% 100%;
-    font-family: Acme;
+body {
+    background: url("resources/Images/Background.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
 }
 
 #main {
-    width: 35em;
-    height: 90vh;
-    margin-top: 3vw;
+    width: 90%;
+    max-width: 720px;
+    height: 92vh;
+
+    margin-left: auto;
+    margin-top: 4vh;
+
     background-color: white;
+
     border-radius: 10px;
-    box-shadow: 7px 10px 10px -8px #000;
+    box-shadow: 7px 10px 10px -6px #000;
+
+    font-family: Acme;
 }
+
 
 /* HEADER OF PAGE */
 
 #title {
     text-align: center;
-    font-size: 45px;
+    font-size: clamp(1rem, 7vw, 1.9rem);
     color: #090909;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding-top: 5%;
+    padding-bottom: 2%;
 }
 
 #description {
     color: #e98074;
-    font-size: 17px;
-    font-weight: 620;
+    font-size: clamp(0.5rem, 3.5vw, 0.8rem);
+    font-weight: 520;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5%;
 }
 
 /* PROGRESS BAR */
 
 #progress-bar-main {
-    width: 27.86em;
-    height: 25px;
-    border-radius: 15px;
-    margin-top: 40px;
+    width: 90%;
+    height: 3%;
+    border-radius: 20px;
+    margin-top: 9%;
     padding-left: 0px;
     background-color: #EAE7DC;
 }
@@ -65,90 +78,42 @@ html {
 #progress-bar-complete {
     width: 25%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: #E85A4F;
     transition-duration: 0.8s;
+    padding: 0px;
 }
 
 #progress-text {
     padding-left: 10px;
     font-weight: 600;
-    transform: translateY(-0px);
+    font-size: clamp(0.1rem, 3vw, 1rem);
+    line-height: 2.8vh;
     color: white;
 }
 
-/* MAIN FORM BODY */
-
+/* SURVEY FORM */
 #survey-form {
-    height: 60vh;
-    margin-top: 5%;
-}
 
-.section-heading {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 50px;
-}
-
-.section-icon {
-    width: 4em;
-    height: 10vh;
-    background-repeat: no-repeat;
-    background-size: 60px 70px;
-    margin-top: 20px;
-}
-
-label {
-    margin-left: 5em;
-}
-
-.text-input {
-    width: 10em;
-    border-style: none;
-    border-bottom: 1px solid black;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    color: #555;
-}
-
-.text-input:focus {
-    outline-style: none;
-    border-bottom: 2px solid black !important;
-    width: 11em;
-}
-
-/* PLACEHOLDER FOR TEXT INPUT */
-
-.text-input::-webkit-input-placeholder {
-    font-size: 0.9em;
-    color: #aaa;
-    font-weight: 100;
-    text-align: center;
-}
-
-.text-input::-moz-placeholder {
-    font-size: 0.9em;
-    color: #aaa;
-    font-weight: 100;
-    text-align: center;
-}
-
-.text-input:-ms-input-placeholder {
-    font-size: 0.9em;
-    color: #aaa;
-    font-weight: 100;
-    text-align: center;
-}
-
-.text-input:-moz-placeholder {
-    font-size: 0.9em;
-    color: #aaa;
-    font-weight: 100;
-    text-align: center;
 }
 
 /* SECTION ICONS */
+
+.section-icon {
+    width: 6vh;
+    height: 6vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.section-heading {
+    font-size: clamp(0.1rem, 5vw, 2rem);
+    text-align: center;
+    margin-top: 0em;
+    margin-bottom: 7vh;
+}
 
 #personal-info-icon {
     background-image: url("resources/Section_Icons/personal_info.svg");
@@ -166,34 +131,54 @@ label {
     background-image: url("resources/Section_Icons/coding.svg");
 }
 
+/* SECTION 1 */
 
-
-#college, #company, #experience {
-    margin-top: 1em;
+label {
+    margin-left: 7%;
+    margin-top: 3vh;
+    font-size: clamp(0.1rem, 3.3vw, 1rem);
 }
 
-#college-label, #company-label, #experience-label {
-    margin-top: 1em;
+.text-input {
+    width: 33%;
+
+    border-style: none;
+    border-bottom: 1px solid black;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+    color: #444;
+    font-size: clamp(0.1rem, 3.8vw, 1rem);
+    font-family: Acme;
+    font-weight: 100;
+
+    margin-top: 3vh;
+}
+
+.text-input:focus {
+    outline-style: none;
+    border-bottom: 2px solid black !important;
+    width: 35%;
 }
 
 /* SECTION 2 */
 
-#field-2 {
-    margin-bottom: 8.7%;
-}
-
-.field {
-    animation-duration: 0s;
-}
-
 select {
-    width: 10em;
+    width: 33%;
+
     border-style: none;
     border-bottom: 1px solid black;
+
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    color: #555;
+
+    color: #444;
+    font-size: clamp(0.1rem, 3.8vw, 1rem);
+    font-family: Acme;
+    font-weight: 100;
 }
 
 select:focus {
@@ -202,17 +187,20 @@ select:focus {
     width: 11em;
 }
 
+#student-section {
+    margin-top: 5%;
+}
+
 /* SECTION 3 */
 
 .box-input-container{
-    height: 7%;
-    width: 90%;
-    margin: 0 auto;
-    margin-left: calc(15%);
+    height: 6vh;
+    width: 100%;
+    padding-top: 2%;
 }
 
 .checkbox-div{
-    width: 20%;
+    width: 25%;
     float: left;
 }
 
@@ -220,23 +208,20 @@ select:focus {
     margin: 0px;
 }
 
-#field-3 {
-    margin-bottom: 6.5%;
+#languages-label {
+    font-size: clamp(0.1rem, 3.5vw, 2rem);
 }
 
 /* SECTION 4 */
 
-#field-4 {
-    margin-bottom: 28%;
-}
-
 #coding-question {
     margin-top: -20px;
+    font-size: clamp(0.1rem, 3.5vw, 2rem);
 }
 
 textarea {
-    width: 20em;
-    height: 15%;
+    width: 80%;
+    height: 20vh;
     position: absolute;
     padding-left: 5px;
     left: 50%;
@@ -246,25 +231,58 @@ textarea {
 /* PREVIOUS NEXT AND SUBMIT BUTTONS */
 
 #buttons {
-    width: 100%;
-    margin-top: 1.5vw;
+    width: 55vw;
+    max-width: 420px;
+    height: 10vh;
+
+    bottom: 5vh;
+    margin: 0px;
+    padding: 0px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .button-div {
     width: 33.33%;
-    height: 5vh;
+    height: 10vh;
     float: left;
 }
 
-.button-img {
-    width: 4.5em;
-    left: -50%;
-    transform: translateX(50%);
+.btn {
+    font-size: clamp(0.1rem, 3.5vw, 1.2rem);
+    text-align: center;
 
+    padding-left: 0px;
+    padding-right: 0px;
+
+    position: relative;
+    left: 50%; transform: translateX(-50%);
+
+    width: 140%;
+    max-width: 100px;
+    height: auto;
+
+    background-color: #E98074;
+    border-color: #E85A4F;
+    border-width: 1px;
+    border-radius: 5px;
 }
 
+.btn-custom {
+    color: white;
+    background-color: #E85A4F;
+}
+.btn-custom:active, .btn-custom:focus, .btn-custom:active, .btn-custom:hover {
+    color: white;
+    -webkit-box-shadow: 10px 10px 8px 2px #E85A4F;
+    -moz-box-shadow: 0px 0px 8px 2px #E85A4F;
+    box-shadow: 0px 0px 1px 1px #E85A4F;
+}
 input[type="button"], input[type="submit"] {
     visibility: hidden;
+    width: 0px; height: 0px;
 }
 
 /* CUSTOM CHECKBOX STYLES */
@@ -279,7 +297,7 @@ input[type="button"], input[type="submit"] {
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
-  padding-left: 1.95em;
+  padding-left: 1.5em;
   cursor: pointer;
 }
 
@@ -289,7 +307,7 @@ input[type="button"], input[type="submit"] {
   content: '';
   position: absolute;
   left: 0; top: 0;
-  width: 1.25em; height: 1.25em;
+  width: 1.1em; height: 1.1em;
   border: 1px solid #000;
   background: #fff;
   border-radius: 4px;
@@ -301,8 +319,8 @@ input[type="button"], input[type="submit"] {
 [type="checkbox"]:checked + label:after {
   content: '\2713\0020';
   position: absolute;
-  top: .15em; left: .12em;
-  font-size: 1.5em;
+  top: .15em; left: .01em;
+  font-size: 1.7em;
   line-height: 0.2;
   color: #E85A4F;
   transition: all .2s;
@@ -318,22 +336,6 @@ input[type="button"], input[type="submit"] {
 [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1);
-}
-
-/* disabled checkbox */
-[type="checkbox"]:disabled:not(:checked) + label:before,
-[type="checkbox"]:disabled:checked + label:before {
-  box-shadow: none;
-  border-color: #bbb;
-  background-color: #ddd;
-}
-
-[type="checkbox"]:disabled:checked + label:after {
-  color: #999;
-}
-
-[type="checkbox"]:disabled + label {
-  color: #aaa;
 }
 
 /* hover style just for information */
@@ -353,7 +355,7 @@ label:hover:before {
 [type="radio"]:not(:checked) + label
 {
     position: relative;
-    padding-left: 28px;
+    padding-left: 22px;
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
@@ -400,22 +402,149 @@ label:hover:before {
 }
 
 
-/* MEDIA QUERIES */
-
-/* Smartphones (portrait and landscape)*/
-
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-
-}
-
 /* iPads (portrait and landscape)*/
 
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
-
+    #main {
+        width: 75%;
+        background-color: sred;
+        min-width: 420px;
+    }
+    #title {
+        font-size: clamp(1rem, 7vw, 2.5rem);
+    }
+    #description {
+        font-size: clamp(0.5rem, 2.4vw, 1rem);
+    }
+    .section-heading {
+        font-size: clamp(0.5rem, 4vw, 2rem);
+        margin-bottom: 5vh;
+    }
+    label {
+        font-size: clamp(0.5rem, 2.6vw, 1.9rem);
+        margin-left: 15%;
+    }
+    .text-input {
+        width: 20%;
+        font-size: clamp(0.1rem, 2.6vw, 1rem);
+    }
+    .text-input:focus {
+        width: 22%;
+    }
+    #student-section > .text-input, #student-section > label {
+        margin-top: 0vh;
+    }
+    #dropdown-branch, #dropdown-branch-label {
+        margin-top: 0vh;
+    }
+    select {
+        width: 20%;
+        font-size: clamp(0.1rem, 2.6vw, 1rem);
+        margin-top: 3vh;
+    }
+    select > option {
+        font-size: clamp(0.1rem, 2.6vw, 1rem);
+    }
+    select:focus {
+        outline-style: none;
+        border-bottom: 2px solid black !important;
+        width: 22%;
+    }
+    .box-input-container{
+        width: 90%;
+        margin-left: 7.5%;
+    }
+    #languages-label {
+        font-size: clamp(0.1rem, 2.6vw, 1rem);
+    }
+    #coding-question {
+        margin-top: -20px;
+        font-size: clamp(0.1rem, 2.6vw, 1rem);
+    }
+    textarea {
+        width: 50%;
+        height: 20vh;
+        border: 2px solid black;
+    }
+    #buttons {
+        height: 10vh;
+        width: 100%;
+        bottom: 5vh;
+    }
+    .btn {
+        width: 150%;
+        font-size: clamp(0.1rem, 3vw, 1.2rem);
+    }
 }
-
 /* Desktop and Laptop */
 
 @media only screen and (min-width : 1224px){
-
+    #main {
+        width: 33%;
+        min-width: 520px;
+    }
+    #title {
+        font-size: clamp(1rem, 3vw, 2.5rem);
+    }
+    #description {
+        font-size: clamp(0.5rem, 1.2vw, 1rem);
+    }
+    .section-heading {
+        font-size: clamp(0.5rem, 1.7vw, 1.9rem);
+        margin-bottom: 5vh;
+    }
+    label {
+        font-size: clamp(0.5rem, 1.2vw, 1.9rem);
+        margin-left: 15%;
+    }
+    .text-input {
+        width: 10%;
+        font-size: clamp(0.1rem, 1.1vw, 1rem);
+    }
+    .text-input:focus {
+        width: 12%;
+    }
+    #student-section > .text-input, #student-section > label {
+        margin-top: 0vh;
+    }
+    #dropdown-branch, #dropdown-branch-label {
+        margin-top: 0vh;
+    }
+    select {
+        width: 10%;
+        font-size: clamp(0.1rem, 1.2vw, 1rem);
+        margin-top: 3vh;
+    }
+    select > option {
+        font-size: clamp(0.1rem, 1.2vw, 1rem);
+    }
+    select:focus {
+        outline-style: none;
+        border-bottom: 2px solid black !important;
+        width: 10%;
+    }
+    .box-input-container{
+        width: 90%;
+        margin-left: 7.5%;
+    }
+    #languages-label {
+        font-size: clamp(0.1rem, 1.2vw, 1rem);
+    }
+    #coding-question {
+        margin-top: -20px;
+        font-size: clamp(0.1rem, 1.2vw, 1rem);
+    }
+    textarea {
+        width: 25%;
+        height: 20vh;
+        border: 2px solid black;
+    }
+    #buttons {
+        height: 8vh;
+        bottom: 5vh;
+    }
+    .btn {
+        width: 70%;
+        font-size: clamp(0.1rem, 1vw, 1.2rem);
+    }
 }

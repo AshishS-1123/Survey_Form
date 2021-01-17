@@ -35,6 +35,22 @@ $(".text-input").blur( function()
 });
 // Functions
 
+function setup()
+{
+    var veiw_width = $( window ).width();
+    var veiw_height = $( window ).height();
+    console.log( veiw_width, veiw_height);
+
+    if( veiw_width / veiw_height < 0.5 )
+    {
+        console.log("satisfied ...");
+        $("#main").height( veiw_width * 1.8 );
+
+        var margin_top = ( veiw_height - veiw_width * 1.8 ) / 2;
+        $("#main").css("margin-top", margin_top);
+    }
+}
+
 function change_visible_div()
 {
     dropdown_div  = $("#dropdown");
@@ -197,6 +213,7 @@ function submitForm()
     if ( checkFormOk(-1) )
     {
         console.log("Everything OK!");
+        window.alert("Thank you for your contribution.");
     }
     else
     {
@@ -215,7 +232,7 @@ function nextSection()
     var current_section = "#field-" + String( section_index );
     var next_section = "#field-" + String( section_index + 1 );
 
-    section_ok = checkFormOk( section_index );
+    section_ok = true;//checkFormOk( section_index );
 
     if ( section_ok && section_index < 4 )
     {
