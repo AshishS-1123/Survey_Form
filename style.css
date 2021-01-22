@@ -4,7 +4,7 @@
 @font-face
 {
 	font-family: "Acme";
-	src: url("resources/fonts/Acme.ttf?4.7.0")format("truetype");
+	src: url("Acme.ttf?4.7.0")format("truetype");
 }
 
 /* DOCUMENT LEVEL STYLES */
@@ -32,7 +32,7 @@ body {
 #main {
     width: 90%;
     max-width: 720px;
-    height: 92vh;
+    height: 33em;
 
     margin-left: auto;
     margin-top: 4vh;
@@ -160,7 +160,7 @@ label {
 .text-input:focus {
     outline-style: none;
     border-bottom: 2px solid black !important;
-    width: 35%;
+    width: 33%;
 }
 
 /* SECTION 2 */
@@ -174,6 +174,7 @@ select {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    margin-top: 3vh;
 
     color: #444;
     font-size: clamp(0.1rem, 3.8vw, 1rem);
@@ -235,7 +236,7 @@ textarea {
     max-width: 420px;
     height: 10vh;
 
-    bottom: 5vh;
+
     margin: 0px;
     padding: 0px;
 
@@ -259,6 +260,7 @@ textarea {
 
     position: relative;
     left: 50%; transform: translateX(-50%);
+    top: 25%;
 
     width: 140%;
     max-width: 100px;
@@ -274,12 +276,18 @@ textarea {
     color: white;
     background-color: #E85A4F;
 }
+
 .btn-custom:active, .btn-custom:focus, .btn-custom:active, .btn-custom:hover {
     color: white;
     -webkit-box-shadow: 10px 10px 8px 2px #E85A4F;
     -moz-box-shadow: 0px 0px 8px 2px #E85A4F;
     box-shadow: 0px 0px 1px 1px #E85A4F;
 }
+
+#btn-submit {
+    top: 20%;
+}
+
 input[type="button"], input[type="submit"] {
     visibility: hidden;
     width: 0px; height: 0px;
@@ -402,6 +410,12 @@ label:hover:before {
 }
 
 
+/* Smartphones (portrait and landscape)*/
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+
+}
+
 /* iPads (portrait and landscape)*/
 
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
@@ -429,7 +443,7 @@ label:hover:before {
         font-size: clamp(0.1rem, 2.6vw, 1rem);
     }
     .text-input:focus {
-        width: 22%;
+        width: 20%;
     }
     #student-section > .text-input, #student-section > label {
         margin-top: 0vh;
@@ -487,22 +501,22 @@ label:hover:before {
         font-size: clamp(1rem, 3vw, 2.5rem);
     }
     #description {
-        font-size: clamp(0.5rem, 1.2vw, 1rem);
+        font-size: clamp(0.5rem, 1.05vw, 1rem);
     }
     .section-heading {
-        font-size: clamp(0.5rem, 1.7vw, 1.9rem);
+        font-size: clamp(0.5rem, 1.6vw, 1.9rem);
         margin-bottom: 5vh;
     }
     label {
-        font-size: clamp(0.5rem, 1.2vw, 1.9rem);
+        font-size: clamp(0.5rem, 1.0vw, 1.9rem);
         margin-left: 15%;
     }
     .text-input {
         width: 10%;
-        font-size: clamp(0.1rem, 1.1vw, 1rem);
+        font-size: clamp(0.1rem, 0.9vw, 1rem);
     }
     .text-input:focus {
-        width: 12%;
+        width: 10%;
     }
     #student-section > .text-input, #student-section > label {
         margin-top: 0vh;
@@ -512,11 +526,11 @@ label:hover:before {
     }
     select {
         width: 10%;
-        font-size: clamp(0.1rem, 1.2vw, 1rem);
+        font-size: clamp(0.1rem, 0.9vw, 1rem);
         margin-top: 3vh;
     }
     select > option {
-        font-size: clamp(0.1rem, 1.2vw, 1rem);
+        font-size: clamp(0.1rem, 0.9vw, 1rem);
     }
     select:focus {
         outline-style: none;
@@ -526,17 +540,21 @@ label:hover:before {
     .box-input-container{
         width: 90%;
         margin-left: 7.5%;
+        padding-top: 0%;
+    }
+    #field-3 > label {
+        margin-top: 1vh;
     }
     #languages-label {
-        font-size: clamp(0.1rem, 1.2vw, 1rem);
+        font-size: clamp(0.1rem, 1vw, 1rem);
     }
     #coding-question {
         margin-top: -20px;
-        font-size: clamp(0.1rem, 1.2vw, 1rem);
+        font-size: clamp(0.1rem, 0.9vw, 1rem);
     }
     textarea {
         width: 25%;
-        height: 20vh;
+        height: 19vh;
         border: 2px solid black;
     }
     #buttons {
@@ -545,6 +563,6 @@ label:hover:before {
     }
     .btn {
         width: 70%;
-        font-size: clamp(0.1rem, 1vw, 1.2rem);
+        font-size: clamp(0.1rem, 1.05vw, 1.2rem);
     }
 }

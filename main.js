@@ -49,6 +49,9 @@ function setup()
         var margin_top = ( veiw_height - veiw_width * 1.8 ) / 2;
         $("#main").css("margin-top", margin_top);
     }
+    else {
+        $("#main").height( $(window).height() * 0.9 );
+    }
 }
 
 function change_visible_div()
@@ -232,7 +235,7 @@ function nextSection()
     var current_section = "#field-" + String( section_index );
     var next_section = "#field-" + String( section_index + 1 );
 
-    section_ok = true;//checkFormOk( section_index );
+    section_ok = checkFormOk( section_index );
 
     if ( section_ok && section_index < 4 )
     {
